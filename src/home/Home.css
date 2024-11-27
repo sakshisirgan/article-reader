@@ -1,0 +1,216 @@
+/* Home Page Layout */
+.home-container {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+  flex-wrap: wrap;  /* Ensure items wrap on smaller screens */
+}
+
+/* Sidebar */
+.home-sidebar {
+  flex: 1;
+  background-color: #508cc8; /* Navy Blue */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Make Sidebar Sticky */
+  position: sticky;
+  top: 20px; /* Keeps it visible while scrolling */
+  z-index: 10;
+  max-width: 300px; /* Sidebar max width */
+  height: fit-content;
+  overflow: hidden;
+}
+
+/* Sidebar Stat Blocks */
+.home-sidebar .stat {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #0056b3; /* Bright Blue */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.home-sidebar .stat:hover {
+  background-color: #2b434d; /* Slightly darker on hover */
+}
+
+.home-sidebar .stat h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-family: 'Roboto Slab', serif;
+  color: #f7fafc; /* Soft off-white color for headings */
+}
+
+.home-sidebar .stat p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #e2e8f0; /* Light gray color for text */
+}
+
+/* Main Section */
+.home-main {
+  flex: 3;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.home-main h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-family: 'Roboto Slab', serif;
+  color: #004080; /* Navy Blue */
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Article List */
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.article-item {
+  background-color: #f9fafb;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.article-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #2b434d;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.article-item p {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.article-item p:hover {
+  color: #38bdf8;
+}
+
+.article-item .read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background-color: #38bdf8;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.article-item .read-more:hover {
+  background-color: #2b528a;
+  transform: translateY(-3px);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .home-container {
+    margin: 20px; /* Margin adjusted for smaller screens */
+  }
+
+  .home-sidebar {
+    flex: 1 1 100%; /* Sidebar takes full width on medium screens */
+    margin-bottom: 20px; /* Spacing between sidebar and content */
+  }
+
+  .home-main {
+    flex: 1 1 100%; /* Main content takes full width */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    margin: 15px; /* More padding on small screens */
+  }
+
+  .home-sidebar {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .home-main {
+    padding: 20px;
+  }
+
+  .article-item {
+    margin-bottom: 15px;
+  }
+
+  .article-item h3 {
+    font-size: 1.3rem; /* Slightly smaller heading for smaller devices */
+  }
+
+  .article-item p {
+    font-size: 0.9rem; /* Smaller font for paragraphs on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    margin: 10px; /* Tighter margins for very small screens */
+  }
+
+  .home-sidebar {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .home-main {
+    padding: 15px;
+  }
+
+  .article-item {
+    padding: 15px;
+  }
+
+  .article-item h3 {
+    font-size: 1.2rem; /* Even smaller heading */
+  }
+
+  .article-item p {
+    font-size: 0.85rem; /* Smaller text size for better fitting */
+  }
+}
+
+/* Add this to your Home.css */
+.article-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.article-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
